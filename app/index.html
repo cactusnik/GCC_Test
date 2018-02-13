@@ -11,18 +11,55 @@
     <link rel="stylesheet" href="assets/css/vendor.min.css">
     <link rel="stylesheet" href="assets/css/main.min.css">
   </head>
-  <body class="body">
-    <div class="site">
-      <div class="header site__header header">
-        <h1>Header</h1>
+  <body class="page">
+    <header class="page__header header"><a class="header__logo logo" href="/"><img class="logo__img" src="assets/img/logo.png"></a>
+      <div class="header__content">
+        <nav class="header__nav nav">
+          <ul class="nav__list">
+            <li class="nav__item"><a class="nav__link nav__link--active" href="/home" title="home">home</a>
+            </li>
+            <li class="nav__item"><a class="nav__link" href="/portfolio" title="portfolio">portfolio</a>
+            </li>
+            <li class="nav__item"><a class="nav__link" href="/blog" title="blog">blog</a>
+            </li>
+            <li class="nav__item"><a class="nav__link" href="/pages" title="pages">pages</a>
+            </li>
+            <li class="nav__item"><a class="nav__link" href="/features" title="features">features</a>
+            </li>
+            <li class="nav__item"><a class="nav__link" href="/megamenu" title="mega menu">mega menu</a>
+            </li>
+            <li class="nav__item"><a class="nav__link" href="/contact" title="contact">contact</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="header__search search">search</div>
       </div>
-      <div class="site__content content">
-        <h1>Index</h1>
-      </div>
-      <footer class="site__footer footer">
-        <h1>Footer1</h1>
-      </footer>
-    </div>
+    </header>
+    <main class="page__main main">
+      <section class="amazing-features">
+        <div class="amazing-features__container container">
+          <h2 class="title">
+             Amazing <span class="title__decore">features</span></h2><span class="description">With unlimited features that we offer, we promise it’s possible to make everything that was impossible for you !</span>
+          <div class="amazing-features__content">
+            <div class="amazing-features__blocks">
+                            <div class="features-b"><img class="features-b__icon" src="assets/img/icon-desktop.png" alt="desctop">
+                              <h3 class="subtitle">responsive &amp; multipurpose</h3><span class="description">Proin in magna a ipsum viverra scelerisq enec turp, nunc vestibulum.</span>
+                            </div>
+                            <div class="features-b"><img class="features-b__icon" src="assets/img/icon-puzzle.png" alt="puzzle">
+                              <h3 class="subtitle">easy customization</h3><span class="description">Proin in magna a ipsum viverra scelerisq enec turp, nunc vestibulum.</span>
+                            </div>
+                            <div class="features-b"><img class="features-b__icon" src="assets/img/icon-star.png" alt="star">
+                              <h3 class="subtitle">unlimited features</h3><span class="description">Proin in magna a ipsum viverra scelerisq enec turp, nunc vestibulum.</span>
+                            </div>
+            </div>
+            <div class="amazing-features__imgs"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site__footer footer">
+      <h1>Footer1</h1>
+    </footer>
     <script src="assets/js/vendor.min.js"></script>
     <script src="assets/js/common.min.js"></script>
   </body>

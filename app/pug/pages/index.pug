@@ -1,4 +1,22 @@
 extends ../layouts/layout.pug
 
-block site__content
-	h1 Index
+block amazing-features
+	section.amazing-features
+		.amazing-features__container.container
+			h2.title 
+				| Amazing 
+				span.title__decore features
+			span.description With unlimited features that we offer, we promise it’s possible to make everything that was impossible for you !
+			.amazing-features__content
+				.amazing-features__blocks
+					mixin features-b (href, alt, title, description)
+						.features-b
+							img.features-b__icon(src=href, alt=alt)
+							h3.subtitle= title
+							span.description= description
+
+					+features-b('assets/img/icon-desktop.png','desctop', 'responsive & multipurpose' , 'Proin in magna a ipsum viverra scelerisq enec turp, nunc vestibulum.')
+					+features-b('assets/img/icon-puzzle.png','puzzle', 'easy customization' , 'Proin in magna a ipsum viverra scelerisq enec turp, nunc vestibulum.')
+					+features-b('assets/img/icon-star.png','star', 'unlimited features' , 'Proin in magna a ipsum viverra scelerisq enec turp, nunc vestibulum.')
+				.amazing-features__imgs
+
