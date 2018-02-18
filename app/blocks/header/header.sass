@@ -1,1 +1,29 @@
 .header
+  background-color: $white
+
+  &__container
+    height: 100px
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 0 15px
+
+  &__content
+    display: flex
+    align-items: center
+
+  &__mobile-nav
+    display: none
+
+  /* Large Devices, Wide Screens */
+  @media only screen and (max-width : 1200px)
+    &__nav
+      display: none
+
+    &__mobile-nav
+      display: block
+
+  @media only screen and (max-width : 768px)
+
+    &__container
+      height: 70px

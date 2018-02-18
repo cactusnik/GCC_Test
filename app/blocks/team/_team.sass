@@ -1,0 +1,74 @@
+.team
+  margin: 6.25rem 0
+
+  &__body
+    display: flex
+    margin-top: 55px
+
+  &__container
+    position: relative
+
+  &__item
+    margin: 0 15px
+    flex: 25%
+
+  &__header
+    text-align: center
+    margin: 0 15px
+
+  &__title
+    position: relative
+    margin-bottom: 20px
+    &:before, &:after
+      content: ''
+      position: absolute
+      left: 0
+      right: 0
+      height: 1px
+      background-image: linear-gradient(to left,$white, $border 50%, $white)
+      z-index: -1
+    .title
+      background-color: #fff
+
+    &:before
+      top: 12px
+
+    &:after
+      top: 18px
+
+  .slick-slider
+    position: static
+
+  .slick-next, .slick-prev
+    width: 30px
+    height: 30px
+    background-color: $accent
+    border-radius: 3px
+    top: 15px
+
+    &:hover
+      background-color: #000
+
+  .slick-prev
+    left: 15px
+
+  .slick-next
+    right: 15px
+
+  .slick-next:before, .slick-prev:before
+    opacity: 1
+    color: $text-color
+
+
+  .slick-prev:before
+    content: '\f0d9'
+    font-family: 'Font Awesome 5 Free'
+    font-weight: 900
+
+  .slick-next:before
+    content: '\f0da'
+    font-family: 'Font Awesome 5 Free'
+    font-weight: 900
+
+  .slick-dots li.slick-active button:before
+    color: $accent

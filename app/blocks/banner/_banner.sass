@@ -1,0 +1,24 @@
+.banner
+  background-color: $accent
+
+  &__body
+    padding: 0 15px
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+  &__buttons
+    display: flex
+    margin: 20px 0
+
+  &__text
+    font-size: 1rem
+    color: $text-color
+    text-transform: uppercase
+	  font-family: "my-raleway"
+    font-weight: 800
+
+  /* Small Devices, Tablets */
+  @media only screen and (max-width : 768px)
+    &__body
+      flex-direction: column

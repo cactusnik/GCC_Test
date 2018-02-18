@@ -1,0 +1,33 @@
+.title
+  position: relative
+  display: inline
+  color: $title
+  font-size: 1.625rem
+  text-transform: uppercase
+	font-family: "my-raleway"
+  font-weight: 800
+  &:before, &:after
+    content: url('../../assets/img/title-decore.png')
+    position: absolute
+
+  &:before
+    left: -45px
+
+  &:after
+    transform: rotate(180deg)
+    right: -45px
+
+
+  &__decore
+    color: $accent
+
+  &--team
+    color: $background
+    background-color: #fff
+    padding: 0 60px
+
+    &:before
+      left: 15px
+
+    &:after
+      right: 15px

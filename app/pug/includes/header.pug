@@ -1,16 +1,33 @@
 header.page__header.header
-	a.header__logo.logo(href='/')
-		img.logo__img(src='assets/img/logo.png')
-	.header__content
-		-var selected = 'home'; //default
-		-var menu = { 'home': '/home', 'portfolio': '/portfolio', 'blog': '/blog', 'pages': '/pages', 'features': '/features', 'mega menu': '/megamenu', 'contact': '/contact' };
-		nav.header__nav.nav
-			ul.nav__list
-				each val, key in menu
-					li.nav__item
-						if selected === key
-							a.nav__link.nav__link--active(href=val, title=key)= key
-						else
-							a.nav__link(href=val, title=key)= key
-		.header__search.search search
-
+	.header__container.container
+		a.header__logo.logo(href='/')
+			img.logo__img(src='assets/img/logo.png')
+		.header__content
+			-var selected = 'home'; //default
+			-var menu = { 'home': '/home', 'portfolio': '/portfolio', 'blog': '/blog', 'pages': '/pages', 'features': '/features', 'mega menu': '/megamenu', 'contact': '/contact' };
+			nav.header__nav.nav
+				ul.nav__list
+					each val, key in menu
+						li.nav__item
+							if selected === key
+								a.nav__link.nav__link--active(href=val, title=key)= key
+							else
+								a.nav__link(href=val, title=key)= key
+			.header__search.search 
+				.search__btn
+					.ei.ei-icon_search
+				input.search__input(type="text" placeholder="Search")
+			.header__mobile-nav.mobile-nav
+				.mobile-nav__btn
+					.ei.ei-icon_menu.mobile-nav__openbtn
+				.mobile-nav__content
+					.ei.ei-icon_close.mobile-nav__closebtn
+					-var selected = 'home'; //default
+					-var menu = { 'home': '/home', 'portfolio': '/portfolio', 'blog': '/blog', 'pages': '/pages', 'features': '/features', 'mega menu': '/megamenu', 'contact': '/contact' };
+						ul.mobile-nav__list
+							each val, key in menu
+								li.mobile-nav__item
+									if selected === key
+										a.mobile-nav__link.nav__link--active(href=val, title=key)= key
+									else
+										a.mobile-nav__link(href=val, title=key)= key

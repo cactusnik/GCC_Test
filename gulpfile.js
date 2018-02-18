@@ -103,7 +103,8 @@ gulp.task('cssVendor', function(){
 		'./app/vendor/normalize.css/normalize.css',
 		'./app/vendor/slick-carousel/slick/slick.css',
 		'./app/vendor/slick-carousel/slick/slick-theme.css',
-		'./app/vendor/font-awesome/web-fonts-with-css/css/fontawesome.min.css'
+		'./app/vendor/font-awesome/web-fonts-with-css/css/fontawesome-all.min.css',
+		'./app/vendor/components-elegant-icons/css/elegant-icons.min.css'
 	])
 	.pipe(concat('vendor.min.css'))
     .pipe(cssmin()) //Сожмем
@@ -123,7 +124,8 @@ gulp.task('jsVendor', function(){
 gulp.task('fontsVendor', function(){
 	return gulp.src([
 		'./app/vendor/slick-carousel/slick/fonts/**/*.*',
-		'./app/vendor/font-awesome/web-fonts-with-css/webfonts/**/*.*'
+		'./app/vendor/font-awesome/web-fonts-with-css/webfonts/**/*.*',
+		'./app/vendor/components-elegant-icons/fonts/**/*.*'
 	])
 	.pipe(gulp.dest('app/assets/fonts'));
 });

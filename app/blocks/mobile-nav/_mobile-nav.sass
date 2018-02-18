@@ -1,0 +1,49 @@
+.mobile-nav
+
+  &__btn
+    padding: 10px
+    width: 28px
+    height: 28px
+    position: relative
+    cursor: pointer
+    color: $accent
+    font-size: 2rem
+
+  &__content
+    height: 100%
+    width: 0
+    position: fixed
+    z-index: 5
+    top: 0
+    left: 0
+    background-color: $background
+    overflow-x: hidden
+    transition: all 0.5s ease
+
+  &__closebtn
+    position: absolute
+    top: 20px
+    right: 20px
+    font-size: 3rem
+    color: $accent
+    z-index: 10
+
+  &__list
+    padding: 60px 0
+    box-sizing: border-box
+    position: relative
+    width: 100%
+    text-align: center
+    min-height: 100%
+    display: flex
+    justify-content: center
+    flex-direction: column
+
+  &__link
+    padding: 8px
+    text-decoration: none
+    font-size: 2rem
+    color: $text-color
+    display: block
+    transition: all 0.5s ease
+    text-transform: uppercase

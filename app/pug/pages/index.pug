@@ -3,20 +3,181 @@ extends ../layouts/layout.pug
 block amazing-features
 	section.amazing-features
 		.amazing-features__container.container
-			h2.title 
-				| Amazing 
-				span.title__decore features
-			span.description With unlimited features that we offer, we promise it’s possible to make everything that was impossible for you !
+			header.amazing-features__header
+				.amazing-features__title
+					h2.title 
+						| Amazing 
+						span.title__decore features
+				span.subtitle With unlimited features that we offer, we promise it’s possible to make everything that was impossible for you !
 			.amazing-features__content
 				.amazing-features__blocks
 					mixin features-b (href, alt, title, description)
 						.features-b
-							img.features-b__icon(src=href, alt=alt)
-							h3.subtitle= title
-							span.description= description
+							.features-b__img
+								img.features-b__icon(src=href, alt=alt)
+							.features-b__content
+								h3.features-b__title= title
+								span.features-b__description= description
 
 					+features-b('assets/img/icon-desktop.png','desctop', 'responsive & multipurpose' , 'Proin in magna a ipsum viverra scelerisq enec turp, nunc vestibulum.')
 					+features-b('assets/img/icon-puzzle.png','puzzle', 'easy customization' , 'Proin in magna a ipsum viverra scelerisq enec turp, nunc vestibulum.')
 					+features-b('assets/img/icon-star.png','star', 'unlimited features' , 'Proin in magna a ipsum viverra scelerisq enec turp, nunc vestibulum.')
-				.amazing-features__imgs
+				.amazing-features__bg
 
+block triggers
+	section.triggers
+		.triggers__container.container
+			mixin trigger (href, title, subtitle, text)
+				.trigger.triggers__item
+					.trigger__icon
+						i.ei(class=href)
+					.trigger__content
+						h3.trigger__title= title
+						span.trigger__subtitle= subtitle
+						p.trigger__text= text
+			+trigger('ei-icon_desktop', 'responsive & multipurpose', 'Desktops, Tablets & Phones','Proin in magna a ipsum viverra scelerisque eu nec turp, Nunc vestibulum fringilla accumsan. Praesent arcu turpis.')
+			+trigger('ei-icon_puzzle_alt', 'easy customization', 'One Click Demo Content Installation','Proin in magna a ipsum viverra scelerisque eu nec turp, Nunc vestibulum fringilla accumsan. Praesent arcu turpis.')
+			+trigger('ei-icon_star', 'unlimited features', 'Shortcodes, Typography & Different Layouts','Proin in magna a ipsum viverra scelerisque eu nec turp, Nunc vestibulum fringilla accumsan. Praesent arcu turpis.')
+			+trigger('ei-icon_menu-square_alt', 'clean & modular coding', 'clean & modular coding','Proin in magna a ipsum viverra scelerisque eu nec turp, Nunc vestibulum fringilla accumsan. Praesent arcu turpis.')
+			+trigger('ei-icon_cart_alt', 'the best e-commerce solutions', 'WooCommerce Fully Integration','Proin in magna a ipsum viverra scelerisque eu nec turp, Nunc vestibulum fringilla accumsan. Praesent arcu turpis.')
+			+trigger('ei-icon_lifesaver', 'WooCommerce Fully Integration', 'Free Lifetime Support & Updates','Proin in magna a ipsum viverra scelerisque eu nec turp, Nunc vestibulum fringilla accumsan. Praesent arcu turpis.')
+
+block company-facts
+	section.company-facts
+		.company-facts__container.container
+			.company-facts__title
+				h2.title 
+					| company  
+					span.title__decore facts 
+			span.subtitle We do love to work and increase our counter numbers, this is what we’ve done till now
+			.company-facts__content
+				mixin fact(data)
+					each item in data.items
+						.fact.company-facts__item
+							span.fact__number= item.number
+							span.fact__line
+								img.fact__decore(src=item.decore)
+							span.fact__title= item.title
+				+fact({'items':[{
+						'number': '218',
+						'decore': 'assets/img/icon-checked.png',
+						'title': 'completed projects'
+					},{
+						'number': '360',
+						'decore': 'assets/img/icon-clock.png',
+						'title': 'hours of work / month'
+						},{
+							'number': '135',
+							'decore': 'assets/img/icon-ticket.png',
+							'title': 'solved tickets'
+							},{
+								'number': '174',
+								'decore': 'assets/img/icon-ok.png',
+								'title': 'satisfied clients'
+								}]})
+							
+block banner
+	section.banner
+		.banner__container.container
+			.banner__body
+				p.banner__text are you satisfied with unlimited features that we offer?
+				.banner__buttons
+					button.btn.btn--banner purchase it now
+					button.btn contact us now
+
+block team
+	section.team
+		.team__container.container
+			.team__header
+				.team__title
+					h2.title.title--team
+						span.title__decore team 
+						| Members
+				span.subtitle We’re some creative people with powerful knowledge & awesome skills behind the scene bringing you the bests
+			.team__body.team__slider
+				//mixin worker + slider
+				mixin worker(data)
+					each item in data.items
+						.worker.team__item
+							.worker__img
+								//img.picture(src=item.img alt=item.name title=item.name)
+								.worker__socials
+									//mixin social for variables link
+									mixin social(data)
+										each item in data.link
+											.social
+												a.social__link(href='javascript:void(0);')
+													i.ei(class='ei-' + item.class)
+									+social(item.social)
+							.worker__content
+								span.worker__name= item.name
+								span.worker__post= item.post
+								a.worker__email(href='mailto:'+item.email)= item.email
+								a.worker__phone(href='tel:' + item.phone.replace(/\D+/g,""))= item.phone
+				+worker({'items':[{
+								'img': 'src',
+								'social': {'link': [{'class': 'social_facebook'},{'class': 'social_twitter'},{'class': 'social_googleplus'},{'class': 'social_vimeo'},{'class': 'social_dribbble'}]},
+								'name': 'alexis simpson',
+								'post': 'CEO & Developer',
+								'email': 'a.simpson@unique.com',
+								'phone': '+1 911 (77) 222-1111'
+							},{
+								'img': 'src',
+								'social': {'link': [{'class': 'social_facebook'},{'class': 'social_twitter'},{'class': 'social_googleplus'},{'class': 'social_vimeo'},{'class': 'social_dribbble'}]},
+								'name': 'steven cole',
+								'post': 'User Interface Designer',
+								'email': 'User Interface Designer',
+								'phone': '+1 911 (77) 222-1111'
+							},{
+								'img': 'src',
+								'social': {'link': [{'class': 'social_facebook'},{'class': 'social_twitter'},{'class': 'social_googleplus'},{'class': 'social_vimeo'},{'class': 'social_dribbble'}]},
+								'name': 'Frank piener',
+								'post': 'Sales Manager',
+								'email': 'f.piener@unique.com',
+								'phone': '+1 911 (77) 222-1111'
+							},{
+								'img': 'src',
+								'social': {'link': [{'class': 'social_facebook'},{'class': 'social_twitter'},{'class': 'social_googleplus'},{'class': 'social_vimeo'},{'class': 'social_dribbble'}]},
+								'name': 'ashley lennon',
+								'post': 'IT Specialist',
+								'email': 'a.lennon@unique.com',
+								'phone': '+1 911 (77) 222-1111'
+							},{
+								'img': 'src',
+								'social': {'link': [{'class': 'social_facebook'},{'class': 'social_twitter'},{'class': 'social_googleplus'},{'class': 'social_vimeo'},{'class': 'social_dribbble'}]},
+								'name': 'ashley lennon',
+								'post': 'IT Specialist',
+								'email': 'a.lennon@unique.com',
+								'phone': '+1 911 (77) 222-1111'
+								}]})
+						
+block clients
+	section.clients
+		.clients__container.container
+			.clients__body.clients__slider
+				mixin client(data)
+					each item in data.client
+						a.client.clients__client(href=item.href)
+							img.client__img(src=item.src title=item.title alt=item.title)
+				+client({'client':[{
+					'src': 'assets/img/client1.png',
+					'href': 'javascript:void(0);',
+					'title': 'vividways'
+					},{
+					'src': 'assets/img/client.png',
+					'href': 'javascript:void(0);',
+					'title': 'vividways'
+					},{
+					'src': 'assets/img/client3.png',
+					'href': 'javascript:void(0);',
+					'title': 'vividways'
+					},{
+					'src': 'assets/img/client4.png',
+					'href': 'javascript:void(0);',
+					'title': 'vividways'
+						},{
+							'src': 'assets/img/client1.png',
+							'href': 'javascript:void(0);',
+							'title': 'vividways'
+							}]})
+			

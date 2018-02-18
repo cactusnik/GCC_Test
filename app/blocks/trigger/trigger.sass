@@ -1,0 +1,69 @@
+.trigger
+  margin-bottom: 3.75rem
+  display: flex
+  box-sizing: border-box
+  padding: 0 15px
+
+  &__icon
+    min-width: 40px
+    height: 40px
+    background-color: $background
+    border-top-left-radius: 3px
+    border-top-right-radius: 3px
+    position: relative
+    display: flex
+    justify-content: center
+    align-items: flex-end
+    color: $text-color
+    border-bottom: 20px solid $accent
+    font-size: 1.2rem
+    &:after
+      content: ''
+      position: absolute
+      bottom: -35px
+      border: 20px solid transparent
+      border-top: 15px solid $background
+
+    &:before
+      content: ''
+      position: absolute
+      bottom: -55px
+      border: 20px solid transparent
+      border-top: 15px solid $accent
+
+
+  &__content
+    margin-left: 20px
+
+  &__title
+    margin-top: 0px
+    margin-bottom: 10px
+    font-size: 0.875rem
+    text-transform: uppercase
+    color: $subtitle
+	  font-family: "my-raleway"
+    font-weight: 800
+
+  &__subtitle
+    font-size: 0.75rem
+    color: $gray
+    font-family: "my-raleway"
+    font-weight: 500
+
+  &__text
+    margin-top: 20px
+    margin-bottom: 0
+    font-size: 0.875rem
+    line-height: 1.5rem
+    color: #7a7a7a
+    font-weight: 500
+
+  &:hover
+    .trigger__icon
+      background-color: $accent
+      border-color: $background
+      &:after
+        border-top: 15px solid $accent
+
+      &:before
+        border-top: 15px solid $background

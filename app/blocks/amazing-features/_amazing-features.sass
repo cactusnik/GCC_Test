@@ -1,0 +1,41 @@
+.amazing-features
+  background-color: $background
+  padding-top: 4.6875rem
+
+  &__header
+    text-align: center
+
+  &__container
+    padding: 0 15px
+
+  &__title
+    margin-bottom: 20px
+
+  &__content
+    display: flex
+    margin-top: 5.625rem
+
+  &__blocks
+    flex: 3.7
+
+  &__bg
+    flex: 8
+    background-image: url('../../assets/img/amazing-features-bg.png')
+    background-repeat: no-repeat
+    background-position: right 0
+
+  @media only screen and (max-width : 992px)
+
+    &__container
+      padding: 0
+      position: relative
+
+    &__bg
+      background-position: right 0
+      position: absolute
+      width: 100%
+      height: 100%
+      opacity: 0.03
+
+    &__blocks
+      margin: 0 15px

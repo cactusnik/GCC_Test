@@ -1,0 +1,22 @@
+.social
+  width: 30px
+  height: 30px
+  border-radius: 3px
+  background-color: $text-color
+  transform: rotate(45deg)
+  display: flex
+  justify-content: center
+  align-items: center
+
+  .ei
+    color: $accent
+
+  &__link
+    transform: rotate(-45deg)
+    text-decoration: none
+
+  &:hover
+    background-color: $background
+    z-index: 2
+    .ei
+      color: $text-color

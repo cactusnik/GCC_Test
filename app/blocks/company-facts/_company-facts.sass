@@ -1,0 +1,30 @@
+.company-facts
+  background-color: $background
+  padding-bottom: 5.9375rem
+  padding-top: 4.6875rem
+
+  &__container
+    text-align: center
+
+  &__content
+    margin-top: 3.125rem
+    display: flex
+
+  &__title
+    margin-bottom: 10px
+
+  &__item
+    flex: 25%
+
+  /* Medium Devices, Desktops */
+  @media only screen and (max-width : 992px)
+
+    &__content
+      flex-wrap: wrap
+    &__item
+      flex: 50%
+  /* Extra Small Devices, Phones */
+  @media only screen and (max-width : 480px)
+
+    &__item
+      flex: 100%

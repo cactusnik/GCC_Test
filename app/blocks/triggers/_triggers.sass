@@ -1,0 +1,18 @@
+.triggers
+  margin-top: 5rem
+
+  &__container
+    display: flex
+    flex-wrap: wrap
+
+  &__item
+    flex: 33.33%
+
+    /* Medium Devices, Desktops */
+  @media only screen and (max-width : 992px)
+    &__item
+      flex: 50%
+
+  @media only screen and (max-width : 768px)
+    &__item
+      flex: 100%

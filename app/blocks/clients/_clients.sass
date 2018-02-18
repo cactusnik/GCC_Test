@@ -1,0 +1,45 @@
+.clients
+  background-color: $background
+  padding: 50px 0
+
+  &__body
+    display: flex
+
+
+  &__client
+    flex: 25%
+
+  .slick-initialized .slick-slide
+    display: flex
+
+  .slick-next, .slick-prev
+    width: 30px
+    height: 30px
+    background-color: $accent
+    border-radius: 3px
+    &:hover
+      background-color: #fff
+      &:before
+        color: $accent
+  .slick-prev
+    left: -45px
+
+  .slick-next
+    right: -45px
+
+  .slick-next:before, .slick-prev:before
+    opacity: 1
+    color: #fff
+
+  .slick-prev:before
+    content: '\f0d9'
+    font-family: 'Font Awesome 5 Free'
+    font-weight: 900
+
+  .slick-next:before
+    content: '\f0da'
+    font-family: 'Font Awesome 5 Free'
+    font-weight: 900
+
+  .slick-dots li.slick-active button:before
+    color: $accent
