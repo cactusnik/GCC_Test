@@ -30,14 +30,14 @@ var path = {
         js: 'app/assets/js/',
         css: 'app/assets/css/',
         img: 'dist/assets/img/',
-        fonts: 'dist/fonts/'
+        fonts: 'dist/assets/fonts/'
     },
     src: { //Пути откуда брать исходники
         pug: 'app/pug/pages/*pug', //Синтаксис src/*.pug говорит gulp что мы хотим взять все файлы с расширением .pug
         js: 'app/blocks/**/*.js',//В стилях и скриптах нам понадобятся только main файлы
         style: 'app/sass/main.sass',
         img: 'app/assets/img/**/*.*', //Синтаксис img/**/*.* означает - взять все файлы всех расширений из папки и из вложенных каталогов
-        fonts: 'app/fonts/**/*.*'
+        fonts: 'app/assets/fonts/**/*.*'
     },
     watch: { //Тут мы укажем, за изменением каких файлов мы хотим наблюдать
         html: 'app/**/*.html',
@@ -123,15 +123,27 @@ gulp.task('jsVendor', function(){
 
 gulp.task('fontsVendor', function(){
 	return gulp.src([
-		'./app/vendor/slick-carousel/slick/fonts/**/*.*',
 		'./app/vendor/font-awesome/web-fonts-with-css/webfonts/**/*.*',
-		'./app/vendor/components-elegant-icons/fonts/**/*.*'
+		'./app/vendor/components-elegant-icons/fonts/**/*.*',
 	])
 	.pipe(gulp.dest('app/assets/fonts'));
 });
 
+gulp.task('fontsslick', function(){
+	return gulp.src([
+		'./app/vendor/slick-carousel/slick/fonts/**/*.*'
+	])
+	.pipe(gulp.dest('app/assets/css/fonts'));
+});
 
-gulp.task('build', gulp.parallel('html','css','js', 'cssVendor', 'jsVendor', 'fontsVendor'));
+gulp.task('fontsawesome', function(){
+	return gulp.src([
+		'./app/vendor/font-awesome/web-fonts-with-css/webfonts/**/*.*',
+	])
+	.pipe(gulp.dest('app/assets/webfonts'));
+});
+
+gulp.task('build', gulp.parallel('html','css','js', 'fontsslick','cssVendor','fontsawesome', 'jsVendor', 'fontsVendor'));
 
 gulp.task('clean', function(){
 	return del('dist');
@@ -146,13 +158,16 @@ gulp.task('img', function(){
 gulp.task('dist', function(){
 	var htmlDist = gulp.src('app/*.html')
 		.pipe(gulp.dest('dist'));
-	var cssDist = gulp.src('app/assets/css/*.css')
+	var cssDist = gulp.src('app/assets/css/**/*.*')
 		.pipe(gulp.dest('dist/assets/css'));
 	var jsDist = gulp.src('app/assets/js/*.js')
 		.pipe(gulp.dest('dist/assets/js'));
-	var fontsDist = gulp.src('app/assets/fonts/*.*')
+	var fontsDist = gulp.src('app/assets/fonts/**/*.*')
 		.pipe(gulp.dest('dist/assets/fonts'));
-	return htmlDist , cssDist, jsDist, fontsDist;
+	var fontsDistA = gulp.src('app/assets/webfonts/*.*')
+		.pipe(gulp.dest('dist/assets/webfonts'));
+
+	return htmlDist , cssDist, jsDist, fontsDist, fontsDistA;
 });
 
 gulp.task('default', gulp.series('build', 'serve'));
